@@ -1,8 +1,8 @@
 <!--
   Client : AZLEAD株式会社
-  File   : Sitemap / Directory Map
-  Scope  : 全14ページ（Main Navigation + Utility）
-  Version: 1.0
+  File   : Directory Map / Sitemap
+  Scope  : 全14ページ / Main Navigation + Utility
+  Version: 1.1
   Updated: 2026-09-04
   Author : Geet Inc.
 -->
@@ -10,285 +10,506 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>サイトマップ｜AZLEAD株式会社</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#FFFFFF;
-    --text:#0D0D0D;
-    --muted:#6B7280;
-    --subtle:#9CA3AF;
-    --line:#D1D5DB;
-    --line-soft:#E5E7EB;
-    --accent:#111111;
-    --tag-top-bg:#111111;      --tag-top-fg:#FFFFFF;
-    --tag-base-bg:#EFEFEF;     --tag-base-fg:#111111;
-    --tag-cms-bg:#E8F0FE;      --tag-cms-fg:#1A4B9C;
-    --tag-simple-bg:#F5F5F5;   --tag-simple-fg:#6B7280;
-    --font:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",system-ui,sans-serif;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--font);
-    font-size:14px;
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:900px;margin:0 auto;padding:56px 24px 80px;}
+  :root {
+    --color-bg:           #FFFFFF;
+    --color-surface:      #FFFFFF;
+    --color-text:         #0D0D0D;
+    --color-text-muted:   #6B7280;
+    --color-text-subtle:  #9CA3AF;
+    --color-border:       #1A1A1A;
+    --color-border-thin:  #E5E7EB;
+    --color-accent:       #00A3E0;
+    --color-accent-soft:  #E6F6FC;
 
-  /* ---------- header ---------- */
-  header{border-bottom:1px solid var(--text);padding-bottom:20px;margin-bottom:36px;}
-  .eyebrow{font-size:11px;letter-spacing:.14em;color:var(--muted);margin:0 0 8px;}
-  h1{font-size:26px;font-weight:700;letter-spacing:.02em;margin:0 0 12px;}
-  .meta{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:12px;color:var(--muted);margin:0;}
-  .meta span strong{color:var(--text);font-weight:500;}
+    --font-sans-jp: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
+    --font-mono:    "JetBrains Mono", "SF Mono", Menlo, monospace;
 
-  /* ---------- legend ---------- */
-  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;}
-  .legend .tag{cursor:default;}
-  .tag{
-    display:inline-block;font-size:11px;line-height:1.6;font-weight:500;
-    padding:1px 8px;border-radius:3px;white-space:nowrap;vertical-align:1px;
-  }
-  .tag-top{background:var(--tag-top-bg);color:var(--tag-top-fg);}
-  .tag-base{background:var(--tag-base-bg);color:var(--tag-base-fg);}
-  .tag-cms{background:var(--tag-cms-bg);color:var(--tag-cms-fg);}
-  .tag-simple{background:var(--tag-simple-bg);color:var(--tag-simple-fg);}
+    --text-title:   24px;
+    --text-section: 16px;
+    --text-header:  13px;
+    --text-node:    14px;
+    --text-url:     11px;
+    --text-legend:  12px;
 
-  h2{
-    font-size:12px;letter-spacing:.14em;color:var(--muted);font-weight:500;
-    margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line-soft);
-  }
-  section{margin-bottom:48px;}
-
-  /* ---------- tree ---------- */
-  .tree,.tree ul{list-style:none;margin:0;padding:0;}
-  .tree ul{margin-left:11px;padding-left:22px;position:relative;}
-  .tree ul::before{
-    content:"";position:absolute;left:0;top:0;bottom:0;
-    border-left:1px solid var(--line);
-  }
-  .tree ul>li{position:relative;padding-left:20px;}
-  .tree ul>li::before{
-    content:"";position:absolute;left:0;top:16px;width:20px;
-    border-top:1px solid var(--line);
-  }
-  .tree ul>li:last-child::after{
-    content:"";position:absolute;left:-1px;top:17px;bottom:0;width:2px;
-    background:var(--bg);
-  }
-  .node{padding:5px 0;}
-  .node-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;}
-  .name{font-size:15px;font-weight:500;}
-  .root .name{font-size:17px;font-weight:700;}
-  .group .name{color:var(--muted);font-weight:500;}
-  .desc{
-    font-size:12px;color:var(--muted);margin:2px 0 0;line-height:1.7;
-  }
-  .flow{
-    font-size:11px;color:var(--subtle);font-family:var(--font);
+    --col-1-w: 180px;
+    --col-2-w: 240px;
+    --col-3-w: 320px;
+    --col-gap: 64px;
+    --node-gap: 14px;
+    --section-gap: 36px;
   }
 
-  /* ---------- summary ---------- */
-  table{width:100%;border-collapse:collapse;font-size:13px;}
-  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line-soft);}
-  th{font-size:11px;letter-spacing:.1em;color:var(--muted);font-weight:500;}
-  td.num,th.num{text-align:right;width:70px;white-space:nowrap;}
-  tr.total td{border-top:1px solid var(--text);border-bottom:none;font-weight:700;}
-  td .pages{display:block;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.7;}
+  * { box-sizing: border-box; }
 
-  .notes{margin:0;padding-left:1.2em;font-size:12px;color:var(--muted);}
-  .notes li{margin-bottom:6px;}
-
-  footer{
-    margin-top:56px;padding-top:20px;border-top:1px solid var(--line-soft);
-    font-size:11px;color:var(--subtle);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans-jp);
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
   }
 
-  @media (max-width:600px){
-    .wrap{padding:36px 18px 60px;}
-    h1{font-size:21px;}
-    .tree ul{padding-left:16px;}
-    .tree ul>li{padding-left:14px;}
-    .tree ul>li::before{width:14px;}
+  .canvas {
+    padding: 64px;
+    min-width: 1060px;
   }
-  @media print{
-    body{font-size:12px;}
-    .wrap{padding:0;max-width:none;}
-    section{page-break-inside:avoid;}
+
+  /* ---- Document header ---- */
+  .doc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--color-border-thin);
+    padding-bottom: 16px;
   }
+  .doc-title {
+    font-size: var(--text-title);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .doc-sub {
+    font-size: var(--text-legend);
+    color: var(--color-text-muted);
+    margin-top: 6px;
+  }
+  .doc-meta {
+    font-size: var(--text-legend);
+    color: var(--color-text-muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+  .legend {
+    display: flex; gap: 20px;
+    font-size: var(--text-legend);
+    color: var(--color-text);
+    margin-top: 10px;
+    justify-content: flex-end;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-swatch { width: 18px; height: 12px; background: #fff; border: 1px solid var(--color-border); }
+  .legend-swatch.cms { border: 2px solid var(--color-accent); }
+  .legend-swatch.simple { border: 1px dashed var(--color-border); }
+
+  /* ---- Section header ---- */
+  .map-section + .map-section { margin-top: 96px; }
+  .map-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .map-section-title {
+    font-size: var(--text-section);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  .map-section-note {
+    font-size: var(--text-legend);
+    color: var(--color-text-muted);
+  }
+
+  /* ---- Hierarchy column headers ---- */
+  .hier-heads {
+    display: grid;
+    grid-template-columns: var(--col-1-w) var(--col-2-w) var(--col-3-w);
+    column-gap: var(--col-gap);
+    padding-bottom: 8px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--color-border-thin);
+  }
+  .hier-heads > div {
+    font-size: var(--text-header);
+    color: var(--color-text-subtle);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---- Map ---- */
+  .map-wrap { position: relative; }
+  .connectors {
+    position: absolute;
+    top: 0; left: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .connectors path { stroke: var(--color-border); stroke-width: 1; fill: none; }
+
+  .map {
+    display: grid;
+    grid-template-columns: var(--col-1-w) 1fr;
+    column-gap: var(--col-gap);
+    align-items: stretch;
+    position: relative;
+  }
+
+  .col-top { display: flex; align-items: center; justify-content: flex-start; }
+  .col-23 { display: flex; flex-direction: column; gap: var(--section-gap); }
+
+  .section {
+    display: grid;
+    grid-template-columns: var(--col-2-w) 1fr;
+    column-gap: var(--col-gap);
+    align-items: start;
+  }
+  .lvl2 { display: flex; align-items: flex-start; }
+  .rows { display: flex; flex-direction: column; gap: var(--node-gap); width: var(--col-3-w); }
+
+  /* ---- Node ---- */
+  .node {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    padding: 9px 13px;
+    width: 100%;
+    text-align: center;
+    font-size: var(--text-node);
+    color: var(--color-text);
+    line-height: 1.3;
+    position: relative;
+  }
+  .node--cms { border: 2px solid var(--color-accent); padding: 8px 12px; }
+  .node--simple { border-style: dashed; }
+  .node-top { min-width: 160px; }
+
+  .node-url {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: var(--text-url);
+    color: var(--color-text-muted);
+    text-align: left;
+    word-break: break-all;
+  }
+  .node-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    color: var(--color-text-subtle);
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  /* ---- Count table ---- */
+  .count-table {
+    margin-top: 96px;
+    border-collapse: collapse;
+    font-size: var(--text-legend);
+    min-width: 640px;
+  }
+  .count-table caption {
+    text-align: left;
+    font-size: var(--text-section);
+    font-weight: 700;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 12px;
+  }
+  .count-table th, .count-table td {
+    text-align: left;
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid var(--color-border-thin);
+  }
+  .count-table th { color: var(--color-text-subtle); font-weight: 400; letter-spacing: 0.04em; }
+  .count-table td.num, .count-table th.num { text-align: right; width: 80px; }
+  .count-table tr.total td { border-top: 1px solid var(--color-border); border-bottom: none; font-weight: 700; }
+
+  /* ---- Footer ---- */
+  footer.doc-foot {
+    margin-top: 64px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border-thin);
+    font-size: 11px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  @page { size: A3 landscape; margin: 18mm; }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="canvas">
 
-  <header>
-    <p class="eyebrow">SITEMAP</p>
-    <h1>AZLEAD株式会社　コーポレートサイト サイトマップ</h1>
-    <p class="meta">
-      <span>全<strong>14</strong>ページ</span>
-      <span>Version <strong>1.0</strong></span>
-      <span>更新日 <strong>2026年9月4日</strong></span>
-      <span>作成 <strong>株式会社Geet</strong></span>
-    </p>
+  <header class="doc-head">
+    <div>
+      <h1 class="doc-title">サイトマップ</h1>
+      <div class="doc-sub">AZLEAD株式会社 コーポレートサイト リニューアル / Directory Map</div>
+    </div>
+    <div class="doc-meta">
+      Version 1.1 ／ 2026-09-04 ／ 全 14 ページ<br>
+      Geet Inc.
+      <div class="legend">
+        <div class="legend-item"><span class="legend-swatch"></span>通常ページ</div>
+        <div class="legend-item"><span class="legend-swatch cms"></span>CMS 連動ページ</div>
+        <div class="legend-item"><span class="legend-swatch simple"></span>付帯ページ</div>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>ページ種別</h2>
-    <div class="legend">
-      <span class="tag tag-top">TOP</span>
-      <span class="tag tag-base">基準ページ</span>
-      <span class="tag tag-cms">CMS</span>
-      <span class="tag tag-simple">シンプルページ</span>
+  <!-- ====================================================== -->
+  <!-- ============ MAIN NAVIGATION ========================== -->
+  <!-- ====================================================== -->
+  <section class="map-section">
+    <div class="map-section-head">
+      <h2 class="map-section-title">Main Navigation ● グローバルナビゲーション</h2>
+      <span class="map-section-note">/service ／ /cases ／ /company ／ /recruit ／ /news ／ /contact</span>
     </div>
 
-    <ul class="tree">
-      <li class="node root">
-        <div class="node-head"><span class="name">TOP</span><span class="tag tag-top">TOP</span></div>
-        <p class="desc">サイト全体の入口。事業の提供価値、導入事例、会社の姿勢への導線を集約します。</p>
+    <div class="hier-heads">
+      <div>第 1 階層</div>
+      <div>第 2 階層</div>
+      <div>第 3 階層</div>
+    </div>
 
-        <ul>
-          <li>
-            <div class="node"><div class="node-head"><span class="name">サービス</span><span class="tag tag-base">基準ページ</span></div>
-            <p class="desc">提供領域と、支援の進め方（プロセス）を掲載します。</p></div>
-          </li>
+    <div class="map-wrap">
+      <svg class="connectors" xmlns="http://www.w3.org/2000/svg"></svg>
 
-          <li>
-            <div class="node group"><div class="node-head"><span class="name">導入事例</span></div></div>
-            <ul>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">一覧</span><span class="tag tag-cms">CMS</span></div>
-                <p class="desc">業界／支援領域で絞り込みができる一覧です。</p></div>
-              </li>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">詳細</span><span class="tag tag-cms">CMS</span></div>
-                <p class="desc">1本あたりの構成は <span class="flow">課題 → 体制 → 施策 → 成果 → 示唆</span> の流れで統一します。</p></div>
-              </li>
-            </ul>
-          </li>
+      <div class="map">
+        <div class="col-top">
+          <div class="node node-top" id="n-top">
+            トップページ
+            <span class="node-url">/</span>
+          </div>
+        </div>
 
-          <li>
-            <div class="node"><div class="node-head"><span class="name">会社情報</span><span class="tag tag-base">基準ページ</span></div>
-            <p class="desc">代表メッセージ、メンバー一覧、会社概要、沿革、体制を1ページに集約します。</p></div>
-            <ul>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">メンバー詳細</span><span class="tag tag-cms">CMS</span></div>
-                <p class="desc">経歴と専門領域を掲載し、その領域の導入事例一覧へ接続します。</p></div>
-              </li>
-            </ul>
-          </li>
+        <div class="col-23">
 
-          <li>
-            <div class="node"><div class="node-head"><span class="name">採用情報</span><span class="tag tag-base">基準ページ</span></div>
-            <p class="desc">募集職種、働き方、選考フローを掲載します。</p></div>
-            <ul>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">採用フォーム</span><span class="tag tag-base">基準ページ</span></div>
-                <p class="desc">応募者向けの入力フォーム。お問い合わせとは項目・導線を分けて設計します。</p></div>
-              </li>
-            </ul>
-          </li>
+          <!-- 1. サービス -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node" id="n-service" data-parent="n-top">
+                サービス
+                <span class="node-url">/service/</span>
+                <span class="node-note">提供領域／支援の進め方（プロセス）</span>
+              </div>
+            </div>
+            <div class="rows"></div>
+          </div>
 
-          <li>
-            <div class="node group"><div class="node-head"><span class="name">お知らせ</span></div></div>
-            <ul>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">一覧</span><span class="tag tag-cms">CMS</span></div>
-                <p class="desc">最新のお知らせを時系列で掲載します。</p></div>
-              </li>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">詳細</span><span class="tag tag-cms">CMS</span></div>
-                <p class="desc">記事本文のテンプレートです。</p></div>
-              </li>
-            </ul>
-          </li>
+          <!-- 2. 導入事例 -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node node--cms" id="n-cases" data-parent="n-top">
+                導入事例 一覧
+                <span class="node-url">/cases/</span>
+                <span class="node-note">業界／支援領域で絞り込み</span>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="node node--cms" data-parent="n-cases">
+                導入事例 詳細
+                <span class="node-url">/cases/{slug}/</span>
+                <span class="node-note">課題 → 体制 → 施策 → 成果 → 示唆</span>
+              </div>
+            </div>
+          </div>
 
-          <li>
-            <div class="node"><div class="node-head"><span class="name">お問い合わせ</span><span class="tag tag-base">基準ページ</span></div>
-            <p class="desc">相談・見積もり依頼を受け付けるフォームです。</p></div>
-          </li>
+          <!-- 3. 会社情報 -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node" id="n-company" data-parent="n-top">
+                会社情報
+                <span class="node-url">/company/</span>
+                <span class="node-note">代表メッセージ／メンバー一覧／会社概要／沿革／体制</span>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="node node--cms" data-parent="n-company">
+                メンバー 詳細
+                <span class="node-url">/company/member/{slug}/</span>
+                <span class="node-note">経歴・専門領域 ／ 領域別の事例一覧へ</span>
+              </div>
+            </div>
+          </div>
 
-          <li>
-            <div class="node group"><div class="node-head"><span class="name">付帯ページ</span></div></div>
-            <ul>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">プライバシーポリシー</span><span class="tag tag-simple">シンプルページ</span></div>
-                <p class="desc">原稿は法務チェックを経たものをご支給いただきます。</p></div>
-              </li>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">送信完了</span><span class="tag tag-simple">シンプルページ</span></div>
-                <p class="desc">お問い合わせ・採用フォーム共用の1ページです。</p></div>
-              </li>
-              <li>
-                <div class="node"><div class="node-head"><span class="name">404</span><span class="tag tag-simple">シンプルページ</span></div>
-                <p class="desc">該当ページが見つからない場合の受け皿です。</p></div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
+          <!-- 4. 採用情報 -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node" id="n-recruit" data-parent="n-top">
+                採用情報
+                <span class="node-url">/recruit/</span>
+                <span class="node-note">募集職種／働き方／選考フロー</span>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="node" data-parent="n-recruit">
+                採用フォーム
+                <span class="node-url">/recruit/entry/</span>
+                <span class="node-note">お問い合わせとは項目・導線を分けて設計</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. お知らせ -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node node--cms" id="n-news" data-parent="n-top">
+                お知らせ 一覧
+                <span class="node-url">/news/</span>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="node node--cms" data-parent="n-news">
+                お知らせ 詳細
+                <span class="node-url">/news/{slug}/</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. お問い合わせ -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node" id="n-contact" data-parent="n-top">
+                お問い合わせ
+                <span class="node-url">/contact/</span>
+                <span class="node-note">相談・見積もり依頼の受付フォーム</span>
+              </div>
+            </div>
+            <div class="rows"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>ページ数の内訳</h2>
-    <table>
-      <thead>
-        <tr><th>ページ種別</th><th>該当ページ</th><th class="num">ページ数</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="tag tag-top">TOP</span></td>
-          <td>TOP</td>
-          <td class="num">1</td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-base">基準ページ</span></td>
-          <td>サービス／会社情報／採用情報／採用フォーム／お問い合わせ</td>
-          <td class="num">5</td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-cms">CMS</span></td>
-          <td>導入事例 一覧・詳細／メンバー詳細／お知らせ 一覧・詳細</td>
-          <td class="num">5</td>
-        </tr>
-        <tr>
-          <td><span class="tag tag-simple">シンプルページ</span></td>
-          <td>プライバシーポリシー／送信完了／404</td>
-          <td class="num">3</td>
-        </tr>
-        <tr class="total">
-          <td>合計</td>
-          <td></td>
-          <td class="num">14</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- ====================================================== -->
+  <!-- ============ UTILITY ================================== -->
+  <!-- ====================================================== -->
+  <section class="map-section">
+    <div class="map-section-head">
+      <h2 class="map-section-title">Utility ● 付帯ページ</h2>
+      <span class="map-section-note">フッター導線 ／ フォーム後続 ／ エラーページ</span>
+    </div>
+
+    <div class="hier-heads">
+      <div>第 1 階層</div>
+      <div>第 2 階層</div>
+      <div>第 3 階層</div>
+    </div>
+
+    <div class="map-wrap">
+      <svg class="connectors" xmlns="http://www.w3.org/2000/svg"></svg>
+
+      <div class="map">
+        <div class="col-top">
+          <div class="node node-top" id="n-top-u">
+            トップページ
+            <span class="node-url">/</span>
+          </div>
+        </div>
+
+        <div class="col-23">
+          <div class="section">
+            <div class="lvl2">
+              <div class="node" id="n-util" data-parent="n-top-u">
+                付帯ページ
+                <span class="node-note">独立ページ</span>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="node node--simple" data-parent="n-util">
+                プライバシーポリシー
+                <span class="node-url">/privacy/</span>
+                <span class="node-note">原稿は法務チェック済みのものをご支給いただきます</span>
+              </div>
+              <div class="node node--simple" data-parent="n-util">
+                送信完了
+                <span class="node-url">/thanks/</span>
+                <span class="node-note">お問い合わせ・採用フォーム共用</span>
+              </div>
+              <div class="node node--simple" data-parent="n-util">
+                404
+                <span class="node-url">/404</span>
+                <span class="node-note">該当ページが見つからない場合の受け皿</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>補足</h2>
-    <ul class="notes">
-      <li>CMSページは各1テンプレートの設計です。実際の記事・メンバーの掲載件数に応じてページは自動的に増えます。</li>
-      <li>送信完了ページは、お問い合わせと採用フォームで共用する想定です。フォームごとに出し分ける場合は1ページ追加となります。</li>
-      <li>お知らせの一覧・詳細は、導入事例とは別デザインを起こす前提でカウントしています。導入事例のレイアウトを流用する構成にも変更できます。</li>
-      <li>メンバー詳細から、その方の専門領域に紐づく導入事例へ回遊できる導線を設けます。</li>
-      <li>本サイトマップは第1版です。ご要望をふまえて随時更新いたします。</li>
-    </ul>
-  </section>
+  <table class="count-table">
+    <caption>ページ数の内訳</caption>
+    <thead>
+      <tr><th>ページ種別</th><th>該当ページ</th><th class="num">ページ数</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>TOP</td><td>トップページ</td><td class="num">1</td></tr>
+      <tr><td>基準ページ</td><td>サービス／会社情報／採用情報／採用フォーム／お問い合わせ</td><td class="num">5</td></tr>
+      <tr><td>CMS</td><td>導入事例 一覧・詳細／メンバー 詳細／お知らせ 一覧・詳細</td><td class="num">5</td></tr>
+      <tr><td>シンプルページ</td><td>プライバシーポリシー／送信完了／404</td><td class="num">3</td></tr>
+      <tr class="total"><td>合計</td><td></td><td class="num">14</td></tr>
+    </tbody>
+  </table>
 
-  <footer>
-    <span>AZLEAD株式会社　コーポレートサイト サイトマップ v1.0</span>
-    <span>株式会社Geet</span>
+  <footer class="doc-foot">
+    凡例：<br>
+    ・ <strong>通常ページ</strong>（黒枠）／<strong>CMS 連動ページ</strong>（青枠・2px）／<strong>付帯ページ</strong>（破線枠）<br>
+    ・ <strong>CMS 連動ページ</strong>は各 1 テンプレートの設計です。実際の記事・メンバーの掲載件数に応じて、ページは自動的に増えます。<br>
+    ・ <strong>送信完了</strong>はお問い合わせと採用フォームで共用する想定です。フォームごとに出し分ける場合は 1 ページ追加となります。<br>
+    ・ <strong>お知らせ</strong>の一覧・詳細は、導入事例とは別デザインを起こす前提でカウントしています。導入事例のレイアウトを流用する構成にも変更できます。<br>
+    ・ <strong>メンバー詳細</strong>から、その方の専門領域に紐づく導入事例へ回遊できる導線を設けます。<br>
+    <br>
+    ※ URL はいずれも仮の設定です。最終確定は構成のご承認後に行います。<br>
+    ※ 本サイトマップは第 1 版です。ご要望をふまえて随時更新いたします。
   </footer>
 
 </div>
+
+<script>
+  // Draw L-shaped (right-angle) connectors between parent and child nodes
+  function drawConnectorsFor(svg, wrap) {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    const wrapRect = wrap.getBoundingClientRect();
+    svg.setAttribute('width', wrapRect.width);
+    svg.setAttribute('height', wrapRect.height);
+    svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
+
+    wrap.querySelectorAll('[data-parent]').forEach(child => {
+      const parentId = child.getAttribute('data-parent');
+      if (!parentId) return;
+      const parent = document.getElementById(parentId);
+      if (!parent) return;
+      const p = parent.getBoundingClientRect();
+      const c = child.getBoundingClientRect();
+
+      const x1 = p.right - wrapRect.left;
+      const y1 = p.top + p.height / 2 - wrapRect.top;
+      const x2 = c.left  - wrapRect.left;
+      const y2 = c.top + c.height / 2 - wrapRect.top;
+      const midX = x1 + (x2 - x1) / 2;
+
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', `M ${x1} ${y1} H ${midX} V ${y2} H ${x2}`);
+      svg.appendChild(path);
+    });
+  }
+
+  function drawAll() {
+    document.querySelectorAll('.map-wrap').forEach(wrap => {
+      const svg = wrap.querySelector('.connectors');
+      if (svg) drawConnectorsFor(svg, wrap);
+    });
+  }
+
+  window.addEventListener('load', drawAll);
+  window.addEventListener('resize', drawAll);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(drawAll);
+  }
+</script>
 </body>
 </html>
