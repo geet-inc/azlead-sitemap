@@ -2,7 +2,7 @@
   Client : AZLEAD株式会社
   File   : Directory Map / Sitemap
   Scope  : 全14ページ / Main Navigation + Utility
-  Version: 1.1
+  Version: 1.2
   Updated: 2026-09-04
   Author : Geet Inc.
 -->
@@ -247,7 +247,7 @@
       <div class="doc-sub">AZLEAD株式会社 コーポレートサイト リニューアル / Directory Map</div>
     </div>
     <div class="doc-meta">
-      Version 1.1 ／ 2026-09-04 ／ 全 14 ページ<br>
+      Version 1.2 ／ 2026-09-04 ／ 全 14 ページ<br>
       Geet Inc.
       <div class="legend">
         <div class="legend-item"><span class="legend-swatch"></span>通常ページ</div>
@@ -258,12 +258,12 @@
   </header>
 
   <!-- ====================================================== -->
-  <!-- ============ MAIN NAVIGATION ========================== -->
+  <!-- ============ DIRECTORY MAP ============================ -->
   <!-- ====================================================== -->
   <section class="map-section">
     <div class="map-section-head">
-      <h2 class="map-section-title">Main Navigation ● グローバルナビゲーション</h2>
-      <span class="map-section-note">/service ／ /cases ／ /company ／ /recruit ／ /news ／ /contact</span>
+      <h2 class="map-section-title">Directory Map ● ページ構成</h2>
+      <span class="map-section-note">/service ／ /cases ／ /company ／ /recruit ／ /news ／ /contact ／ /privacy</span>
     </div>
 
     <div class="hier-heads">
@@ -376,66 +376,39 @@
                 <span class="node-note">相談・見積もり依頼の受付フォーム</span>
               </div>
             </div>
-            <div class="rows"></div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================================================== -->
-  <!-- ============ UTILITY ================================== -->
-  <!-- ====================================================== -->
-  <section class="map-section">
-    <div class="map-section-head">
-      <h2 class="map-section-title">Utility ● 付帯ページ</h2>
-      <span class="map-section-note">フッター導線 ／ フォーム後続 ／ エラーページ</span>
-    </div>
-
-    <div class="hier-heads">
-      <div>第 1 階層</div>
-      <div>第 2 階層</div>
-      <div>第 3 階層</div>
-    </div>
-
-    <div class="map-wrap">
-      <svg class="connectors" xmlns="http://www.w3.org/2000/svg"></svg>
-
-      <div class="map">
-        <div class="col-top">
-          <div class="node node-top" id="n-top-u">
-            トップページ
-            <span class="node-url">/</span>
-          </div>
-        </div>
-
-        <div class="col-23">
-          <div class="section">
-            <div class="lvl2">
-              <div class="node" id="n-util" data-parent="n-top-u">
-                付帯ページ
-                <span class="node-note">独立ページ</span>
-              </div>
-            </div>
             <div class="rows">
-              <div class="node node--simple" data-parent="n-util">
-                プライバシーポリシー
-                <span class="node-url">/privacy/</span>
-                <span class="node-note">原稿は法務チェック済みのものをご支給いただきます</span>
-              </div>
-              <div class="node node--simple" data-parent="n-util">
+              <div class="node node--simple" data-parent="n-contact">
                 送信完了
                 <span class="node-url">/thanks/</span>
                 <span class="node-note">お問い合わせ・採用フォーム共用</span>
               </div>
-              <div class="node node--simple" data-parent="n-util">
+            </div>
+          </div>
+
+          <!-- 7. プライバシーポリシー -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node node--simple" id="n-privacy" data-parent="n-top">
+                プライバシーポリシー
+                <span class="node-url">/privacy/</span>
+                <span class="node-note">原稿は法務チェック済みのものをご支給いただきます</span>
+              </div>
+            </div>
+            <div class="rows"></div>
+          </div>
+
+          <!-- 8. 404 -->
+          <div class="section">
+            <div class="lvl2">
+              <div class="node node--simple" id="n-404" data-parent="n-top">
                 404
                 <span class="node-url">/404</span>
                 <span class="node-note">該当ページが見つからない場合の受け皿</span>
               </div>
             </div>
+            <div class="rows"></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -455,17 +428,6 @@
     </tbody>
   </table>
 
-  <footer class="doc-foot">
-    凡例：<br>
-    ・ <strong>通常ページ</strong>（黒枠）／<strong>CMS 連動ページ</strong>（青枠・2px）／<strong>付帯ページ</strong>（破線枠）<br>
-    ・ <strong>CMS 連動ページ</strong>は各 1 テンプレートの設計です。実際の記事・メンバーの掲載件数に応じて、ページは自動的に増えます。<br>
-    ・ <strong>送信完了</strong>はお問い合わせと採用フォームで共用する想定です。フォームごとに出し分ける場合は 1 ページ追加となります。<br>
-    ・ <strong>お知らせ</strong>の一覧・詳細は、導入事例とは別デザインを起こす前提でカウントしています。導入事例のレイアウトを流用する構成にも変更できます。<br>
-    ・ <strong>メンバー詳細</strong>から、その方の専門領域に紐づく導入事例へ回遊できる導線を設けます。<br>
-    <br>
-    ※ URL はいずれも仮の設定です。最終確定は構成のご承認後に行います。<br>
-    ※ 本サイトマップは第 1 版です。ご要望をふまえて随時更新いたします。
-  </footer>
 
 </div>
 
