@@ -1,8 +1,8 @@
 <!--
   Client : AZLEAD株式会社
   File   : Directory Map / Sitemap
-  Scope  : 全14ページ / Main Navigation + Utility
-  Version: 1.2
+  Scope  : 全14ページ
+  Version: 2.0
   Updated: 2026-09-04
   Author : Geet Inc.
 -->
@@ -10,6 +10,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>サイトマップ｜AZLEAD株式会社</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,32 +18,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --color-bg:           #FFFFFF;
-    --color-surface:      #FFFFFF;
-    --color-text:         #0D0D0D;
-    --color-text-muted:   #6B7280;
-    --color-text-subtle:  #9CA3AF;
-    --color-border:       #1A1A1A;
-    --color-border-thin:  #E5E7EB;
-    --color-accent:       #00A3E0;
-    --color-accent-soft:  #E6F6FC;
+    /* ---- Color ---- */
+    --c-bg:            #FFFFFF;
+    --c-surface:       #F5F5F7;
+    --c-card:          #FFFFFF;
+    --c-text:          #1D1D1F;
+    --c-text-2:        #6E6E73;
+    --c-line:          #D2D2D7;
+    --c-line-strong:   #AEAEB2;
+    --c-accent:        #0071E3;
+    --c-accent-tint:   #EDF5FE;
+    --c-accent-line:   #A8D0F5;
 
-    --font-sans-jp: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
-    --font-mono:    "JetBrains Mono", "SF Mono", Menlo, monospace;
+    /* ---- Type ---- */
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Text",
+            "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
 
-    --text-title:   24px;
-    --text-section: 16px;
-    --text-header:  13px;
-    --text-node:    14px;
-    --text-url:     11px;
-    --text-legend:  12px;
-
-    --col-1-w: 180px;
-    --col-2-w: 240px;
-    --col-3-w: 320px;
-    --col-gap: 64px;
-    --node-gap: 14px;
-    --section-gap: 36px;
+    /* ---- Layout ---- */
+    --col-1: 190px;
+    --col-2: 268px;
+    --col-3: 320px;
+    --col-gap: 56px;
+    --node-gap: 16px;
+    --section-gap: 28px;
+    --radius: 12px;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 16px rgba(0,0,0,.05);
   }
 
   * { box-sizing: border-box; }
@@ -50,192 +51,261 @@
   html, body {
     margin: 0;
     padding: 0;
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-sans-jp);
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font);
     font-feature-settings: "palt";
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .canvas {
-    padding: 64px;
-    min-width: 1060px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 72px 40px 96px;
   }
 
-  /* ---- Document header ---- */
+  /* ================= Header ================= */
   .doc-head {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 32px;
-    border-bottom: 1px solid var(--color-border-thin);
-    padding-bottom: 16px;
+    gap: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--c-line);
+    margin-bottom: 20px;
   }
   .doc-title {
-    font-size: var(--text-title);
+    font-size: 34px;
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.022em;
+    line-height: 1.15;
     margin: 0;
   }
   .doc-sub {
-    font-size: var(--text-legend);
-    color: var(--color-text-muted);
-    margin-top: 6px;
+    font-size: 15px;
+    color: var(--c-text-2);
+    letter-spacing: -0.01em;
+    margin-top: 8px;
   }
   .doc-meta {
-    font-size: var(--text-legend);
-    color: var(--color-text-muted);
+    font-size: 13px;
+    color: var(--c-text-2);
     text-align: right;
-    line-height: 1.6;
+    line-height: 1.7;
+    white-space: nowrap;
   }
-  .legend {
-    display: flex; gap: 20px;
-    font-size: var(--text-legend);
-    color: var(--color-text);
-    margin-top: 10px;
-    justify-content: flex-end;
-  }
-  .legend-item { display: flex; align-items: center; gap: 8px; }
-  .legend-swatch { width: 18px; height: 12px; background: #fff; border: 1px solid var(--color-border); }
-  .legend-swatch.cms { border: 2px solid var(--color-accent); }
-  .legend-swatch.simple { border: 1px dashed var(--color-border); }
+  .doc-meta strong { color: var(--c-text); font-weight: 600; }
 
-  /* ---- Section header ---- */
-  .map-section + .map-section { margin-top: 96px; }
-  .map-section-head {
+  /* ================= Legend ================= */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--c-text-2);
+    background: var(--c-surface);
+    border-radius: 999px;
+    padding: 6px 14px 6px 10px;
+  }
+  .legend-key {
+    width: 14px; height: 14px;
+    border-radius: 4px;
+    background: var(--c-card);
+    border: 1px solid var(--c-line);
+  }
+  .legend-key.is-cms { background: var(--c-accent-tint); border-color: var(--c-accent-line); }
+  .legend-key.is-sub { background: var(--c-surface); border-color: var(--c-line-strong); border-style: dashed; }
+
+  /* ================= Section ================= */
+  .sec-head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+    gap: 24px;
     margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--color-border);
   }
-  .map-section-title {
-    font-size: var(--text-section);
-    font-weight: 700;
-    letter-spacing: 0.02em;
+  .sec-title {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
     margin: 0;
   }
-  .map-section-note {
-    font-size: var(--text-legend);
-    color: var(--color-text-muted);
+  .sec-note {
+    font-size: 12.5px;
+    color: var(--c-text-2);
+    font-family: var(--font-mono);
+    letter-spacing: -0.01em;
   }
 
-  /* ---- Hierarchy column headers ---- */
+  /* ================= Map ================= */
+  .map-scroll { overflow-x: auto; padding-bottom: 8px; }
+  .map-wrap { position: relative; min-width: 920px; }
+
   .hier-heads {
     display: grid;
-    grid-template-columns: var(--col-1-w) var(--col-2-w) var(--col-3-w);
+    grid-template-columns: var(--col-1) var(--col-2) var(--col-3);
     column-gap: var(--col-gap);
-    padding-bottom: 8px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--color-border-thin);
+    padding-bottom: 10px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--c-line);
   }
   .hier-heads > div {
-    font-size: var(--text-header);
-    color: var(--color-text-subtle);
-    letter-spacing: 0.04em;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--c-text-2);
+    letter-spacing: 0.06em;
   }
 
-  /* ---- Map ---- */
-  .map-wrap { position: relative; }
-  .connectors {
-    position: absolute;
-    top: 0; left: 0;
-    pointer-events: none;
-    overflow: visible;
-  }
-  .connectors path { stroke: var(--color-border); stroke-width: 1; fill: none; }
+  .connectors { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; }
+  .connectors path { stroke: var(--c-line-strong); stroke-width: 1.5; fill: none; stroke-linecap: round; }
 
   .map {
     display: grid;
-    grid-template-columns: var(--col-1-w) 1fr;
+    grid-template-columns: var(--col-1) 1fr;
     column-gap: var(--col-gap);
-    align-items: stretch;
     position: relative;
   }
+  .col-top { display: flex; align-items: center; }
+  .col-rest { display: flex; flex-direction: column; gap: var(--section-gap); }
 
-  .col-top { display: flex; align-items: center; justify-content: flex-start; }
-  .col-23 { display: flex; flex-direction: column; gap: var(--section-gap); }
-
-  .section {
+  .branch {
     display: grid;
-    grid-template-columns: var(--col-2-w) 1fr;
+    grid-template-columns: var(--col-2) 1fr;
     column-gap: var(--col-gap);
     align-items: start;
   }
-  .lvl2 { display: flex; align-items: flex-start; }
-  .rows { display: flex; flex-direction: column; gap: var(--node-gap); width: var(--col-3-w); }
+  .lvl2 { display: flex; }
+  .lvl3 { display: flex; flex-direction: column; gap: var(--node-gap); width: var(--col-3); }
 
-  /* ---- Node ---- */
+  /* ================= Node ================= */
   .node {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 2px;
-    padding: 9px 13px;
-    width: 100%;
-    text-align: center;
-    font-size: var(--text-node);
-    color: var(--color-text);
-    line-height: 1.3;
     position: relative;
-  }
-  .node--cms { border: 2px solid var(--color-accent); padding: 8px 12px; }
-  .node--simple { border-style: dashed; }
-  .node-top { min-width: 160px; }
-
-  .node-url {
-    display: block;
-    margin-top: 6px;
-    font-family: var(--font-mono);
-    font-size: var(--text-url);
-    color: var(--color-text-muted);
+    width: 100%;
+    background: var(--c-card);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px 16px;
     text-align: left;
+  }
+  .node-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .node-name {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    line-height: 1.4;
+    color: var(--c-text);
+  }
+  .node-url {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--c-text-2);
+    background: var(--c-surface);
+    border-radius: 6px;
+    padding: 2px 7px;
     word-break: break-all;
   }
   .node-note {
     display: block;
-    margin-top: 4px;
-    font-size: 10px;
-    color: var(--color-text-subtle);
-    text-align: left;
-    line-height: 1.4;
+    margin-top: 8px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--c-text-2);
+    letter-spacing: -0.005em;
   }
 
-  /* ---- Count table ---- */
-  .count-table {
-    margin-top: 96px;
-    border-collapse: collapse;
-    font-size: var(--text-legend);
-    min-width: 640px;
+  /* TOP：最重要要素として1つだけ塗り */
+  .node--top {
+    background: var(--c-text);
+    border-color: var(--c-text);
+    box-shadow: 0 2px 6px rgba(0,0,0,.14), 0 10px 24px rgba(0,0,0,.10);
   }
-  .count-table caption {
-    text-align: left;
-    font-size: var(--text-section);
-    font-weight: 700;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
-  .count-table th, .count-table td {
-    text-align: left;
-    padding: 8px 12px 8px 0;
-    border-bottom: 1px solid var(--color-border-thin);
-  }
-  .count-table th { color: var(--color-text-subtle); font-weight: 400; letter-spacing: 0.04em; }
-  .count-table td.num, .count-table th.num { text-align: right; width: 80px; }
-  .count-table tr.total td { border-top: 1px solid var(--color-border); border-bottom: none; font-weight: 700; }
+  .node--top .node-name { color: #FFFFFF; }
+  .node--top .node-url { color: rgba(255,255,255,.72); background: rgba(255,255,255,.14); }
 
-  /* ---- Footer ---- */
-  footer.doc-foot {
-    margin-top: 64px;
+  .node--cms { border-color: var(--c-accent-line); background: var(--c-accent-tint); }
+  .node--cms .node-url { background: rgba(255,255,255,.72); }
+
+  .node--sub { background: var(--c-surface); border-style: dashed; border-color: var(--c-line-strong); box-shadow: none; }
+  .node--sub .node-url { background: rgba(255,255,255,.8); }
+
+  /* ---- Badge ---- */
+  .badge {
+    flex: none;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .badge--cms { background: var(--c-accent); color: #FFFFFF; }
+  .badge--sub { background: #E3E3E8; color: #55555C; }
+
+  /* ================= Summary ================= */
+  .summary { margin-top: 88px; }
+  .summary-title {
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0 0 20px;
+  }
+  .summary-card {
+    background: var(--c-surface);
+    border-radius: 16px;
+    padding: 8px 24px;
+    max-width: 780px;
+    overflow-x: auto;
+  }
+  .summary-card table { min-width: 520px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 14px 8px; border-bottom: 1px solid var(--c-line); }
+  thead th {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--c-text-2);
+    letter-spacing: 0.06em;
     padding-top: 16px;
-    border-top: 1px solid var(--color-border-thin);
-    font-size: 11px;
-    color: var(--color-text-muted);
-    line-height: 1.7;
+  }
+  td.type { font-weight: 600; white-space: nowrap; width: 150px; }
+  td.pages { color: var(--c-text-2); }
+  .num { text-align: right; width: 92px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tr.total td { border-bottom: none; font-weight: 700; font-size: 15px; padding-top: 16px; padding-bottom: 18px; }
+
+  /* ================= Responsive ================= */
+  @media (max-width: 860px) {
+    .canvas { padding: 48px 20px 72px; }
+    .doc-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .doc-meta { text-align: left; }
+    .doc-title { font-size: 28px; }
+    .sec-head { flex-direction: column; gap: 8px; }
+    .sec-note { word-break: break-all; white-space: normal; }
+    td.type { width: auto; }
   }
 
-  @page { size: A3 landscape; margin: 18mm; }
+  @media print {
+    .canvas { padding: 0; max-width: none; }
+    .map-scroll { overflow: visible; }
+    .node { box-shadow: none; }
+    .summary { page-break-inside: avoid; }
+  }
+  @page { size: A3 landscape; margin: 16mm; }
 </style>
 </head>
 <body>
@@ -244,234 +314,254 @@
   <header class="doc-head">
     <div>
       <h1 class="doc-title">サイトマップ</h1>
-      <div class="doc-sub">AZLEAD株式会社 コーポレートサイト リニューアル / Directory Map</div>
+      <p class="doc-sub">AZLEAD株式会社　コーポレートサイト リニューアル ／ Directory Map</p>
     </div>
     <div class="doc-meta">
-      Version 1.2 ／ 2026-09-04 ／ 全 14 ページ<br>
-      Geet Inc.
-      <div class="legend">
-        <div class="legend-item"><span class="legend-swatch"></span>通常ページ</div>
-        <div class="legend-item"><span class="legend-swatch cms"></span>CMS 連動ページ</div>
-        <div class="legend-item"><span class="legend-swatch simple"></span>付帯ページ</div>
-      </div>
+      全 <strong>14</strong> ページ<br>
+      Version <strong>2.0</strong>　2026年9月4日<br>
+      株式会社Geet
     </div>
   </header>
 
-  <!-- ====================================================== -->
-  <!-- ============ DIRECTORY MAP ============================ -->
-  <!-- ====================================================== -->
-  <section class="map-section">
-    <div class="map-section-head">
-      <h2 class="map-section-title">Directory Map ● ページ構成</h2>
-      <span class="map-section-note">/service ／ /cases ／ /company ／ /recruit ／ /news ／ /contact ／ /privacy</span>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-key"></span>通常ページ</span>
+    <span class="legend-item"><span class="legend-key is-cms"></span>CMS 連動ページ</span>
+    <span class="legend-item"><span class="legend-key is-sub"></span>付帯ページ</span>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2 class="sec-title">ページ構成</h2>
+      <span class="sec-note">/service ・ /cases ・ /company ・ /recruit ・ /news ・ /contact ・ /privacy</span>
     </div>
 
-    <div class="hier-heads">
-      <div>第 1 階層</div>
-      <div>第 2 階層</div>
-      <div>第 3 階層</div>
-    </div>
+    <div class="map-scroll">
+      <div class="map-wrap">
 
-    <div class="map-wrap">
-      <svg class="connectors" xmlns="http://www.w3.org/2000/svg"></svg>
-
-      <div class="map">
-        <div class="col-top">
-          <div class="node node-top" id="n-top">
-            トップページ
-            <span class="node-url">/</span>
-          </div>
+        <div class="hier-heads">
+          <div>第 1 階層</div>
+          <div>第 2 階層</div>
+          <div>第 3 階層</div>
         </div>
 
-        <div class="col-23">
+        <svg class="connectors" xmlns="http://www.w3.org/2000/svg"></svg>
 
-          <!-- 1. サービス -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node" id="n-service" data-parent="n-top">
-                サービス
-                <span class="node-url">/service/</span>
-                <span class="node-note">提供領域／支援の進め方（プロセス）</span>
-              </div>
-            </div>
-            <div class="rows"></div>
-          </div>
-
-          <!-- 2. 導入事例 -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node node--cms" id="n-cases" data-parent="n-top">
-                導入事例 一覧
-                <span class="node-url">/cases/</span>
-                <span class="node-note">業界／支援領域で絞り込み</span>
-              </div>
-            </div>
-            <div class="rows">
-              <div class="node node--cms" data-parent="n-cases">
-                導入事例 詳細
-                <span class="node-url">/cases/{slug}/</span>
-                <span class="node-note">課題 → 体制 → 施策 → 成果 → 示唆</span>
-              </div>
+        <div class="map">
+          <div class="col-top">
+            <div class="node node--top" id="n-top">
+              <div class="node-head"><span class="node-name">トップページ</span></div>
+              <span class="node-url">/</span>
             </div>
           </div>
 
-          <!-- 3. 会社情報 -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node" id="n-company" data-parent="n-top">
-                会社情報
-                <span class="node-url">/company/</span>
-                <span class="node-note">代表メッセージ／メンバー一覧／会社概要／沿革／体制</span>
-              </div>
-            </div>
-            <div class="rows">
-              <div class="node node--cms" data-parent="n-company">
-                メンバー 詳細
-                <span class="node-url">/company/member/{slug}/</span>
-                <span class="node-note">経歴・専門領域 ／ 領域別の事例一覧へ</span>
-              </div>
-            </div>
-          </div>
+          <div class="col-rest">
 
-          <!-- 4. 採用情報 -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node" id="n-recruit" data-parent="n-top">
-                採用情報
-                <span class="node-url">/recruit/</span>
-                <span class="node-note">募集職種／働き方／選考フロー</span>
+            <!-- サービス -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node" id="n-service" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">サービス</span></div>
+                  <span class="node-url">/service/</span>
+                  <span class="node-note">提供領域／支援の進め方（プロセス）</span>
+                </div>
               </div>
+              <div class="lvl3"></div>
             </div>
-            <div class="rows">
-              <div class="node" data-parent="n-recruit">
-                採用フォーム
-                <span class="node-url">/recruit/entry/</span>
-                <span class="node-note">お問い合わせとは項目・導線を分けて設計</span>
-              </div>
-            </div>
-          </div>
 
-          <!-- 5. お知らせ -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node node--cms" id="n-news" data-parent="n-top">
-                お知らせ 一覧
-                <span class="node-url">/news/</span>
+            <!-- 導入事例 -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node node--cms" id="n-cases" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">導入事例 一覧</span><span class="badge badge--cms">CMS</span></div>
+                  <span class="node-url">/cases/</span>
+                  <span class="node-note">業界／支援領域で絞り込み</span>
+                </div>
+              </div>
+              <div class="lvl3">
+                <div class="node node--cms" data-parent="n-cases">
+                  <div class="node-head"><span class="node-name">導入事例 詳細</span><span class="badge badge--cms">CMS</span></div>
+                  <span class="node-url">/cases/{slug}/</span>
+                  <span class="node-note">課題 → 体制 → 施策 → 成果 → 示唆</span>
+                </div>
               </div>
             </div>
-            <div class="rows">
-              <div class="node node--cms" data-parent="n-news">
-                お知らせ 詳細
-                <span class="node-url">/news/{slug}/</span>
-              </div>
-            </div>
-          </div>
 
-          <!-- 6. お問い合わせ -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node" id="n-contact" data-parent="n-top">
-                お問い合わせ
-                <span class="node-url">/contact/</span>
-                <span class="node-note">相談・見積もり依頼の受付フォーム</span>
+            <!-- 会社情報 -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node" id="n-company" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">会社情報</span></div>
+                  <span class="node-url">/company/</span>
+                  <span class="node-note">代表メッセージ／メンバー一覧／会社概要／沿革／体制</span>
+                </div>
+              </div>
+              <div class="lvl3">
+                <div class="node node--cms" data-parent="n-company">
+                  <div class="node-head"><span class="node-name">メンバー 詳細</span><span class="badge badge--cms">CMS</span></div>
+                  <span class="node-url">/company/member/{slug}/</span>
+                  <span class="node-note">経歴・専門領域 ／ 領域別の事例一覧へ</span>
+                </div>
               </div>
             </div>
-            <div class="rows">
-              <div class="node node--simple" data-parent="n-contact">
-                送信完了
-                <span class="node-url">/thanks/</span>
-                <span class="node-note">お問い合わせ・採用フォーム共用</span>
-              </div>
-            </div>
-          </div>
 
-          <!-- 7. プライバシーポリシー -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node node--simple" id="n-privacy" data-parent="n-top">
-                プライバシーポリシー
-                <span class="node-url">/privacy/</span>
-                <span class="node-note">原稿は法務チェック済みのものをご支給いただきます</span>
+            <!-- 採用情報 -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node" id="n-recruit" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">採用情報</span></div>
+                  <span class="node-url">/recruit/</span>
+                  <span class="node-note">募集職種／働き方／選考フロー</span>
+                </div>
+              </div>
+              <div class="lvl3">
+                <div class="node" data-parent="n-recruit">
+                  <div class="node-head"><span class="node-name">採用フォーム</span></div>
+                  <span class="node-url">/recruit/entry/</span>
+                  <span class="node-note">お問い合わせとは項目・導線を分けて設計</span>
+                </div>
               </div>
             </div>
-            <div class="rows"></div>
-          </div>
 
-          <!-- 8. 404 -->
-          <div class="section">
-            <div class="lvl2">
-              <div class="node node--simple" id="n-404" data-parent="n-top">
-                404
-                <span class="node-url">/404</span>
-                <span class="node-note">該当ページが見つからない場合の受け皿</span>
+            <!-- お知らせ -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node node--cms" id="n-news" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">お知らせ 一覧</span><span class="badge badge--cms">CMS</span></div>
+                  <span class="node-url">/news/</span>
+                </div>
+              </div>
+              <div class="lvl3">
+                <div class="node node--cms" data-parent="n-news">
+                  <div class="node-head"><span class="node-name">お知らせ 詳細</span><span class="badge badge--cms">CMS</span></div>
+                  <span class="node-url">/news/{slug}/</span>
+                </div>
               </div>
             </div>
-            <div class="rows"></div>
-          </div>
 
+            <!-- お問い合わせ -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node" id="n-contact" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">お問い合わせ</span></div>
+                  <span class="node-url">/contact/</span>
+                  <span class="node-note">相談・見積もり依頼の受付フォーム</span>
+                </div>
+              </div>
+              <div class="lvl3">
+                <div class="node node--sub" data-parent="n-contact">
+                  <div class="node-head"><span class="node-name">送信完了</span><span class="badge badge--sub">付帯</span></div>
+                  <span class="node-url">/thanks/</span>
+                  <span class="node-note">お問い合わせ・採用フォーム共用</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- プライバシーポリシー -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node node--sub" id="n-privacy" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">プライバシーポリシー</span><span class="badge badge--sub">付帯</span></div>
+                  <span class="node-url">/privacy/</span>
+                  <span class="node-note">原稿は法務チェック済みのものをご支給いただきます</span>
+                </div>
+              </div>
+              <div class="lvl3"></div>
+            </div>
+
+            <!-- 404 -->
+            <div class="branch">
+              <div class="lvl2">
+                <div class="node node--sub" id="n-404" data-parent="n-top">
+                  <div class="node-head"><span class="node-name">404</span><span class="badge badge--sub">付帯</span></div>
+                  <span class="node-url">/404</span>
+                  <span class="node-note">該当ページが見つからない場合の受け皿</span>
+                </div>
+              </div>
+              <div class="lvl3"></div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <table class="count-table">
-    <caption>ページ数の内訳</caption>
-    <thead>
-      <tr><th>ページ種別</th><th>該当ページ</th><th class="num">ページ数</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>TOP</td><td>トップページ</td><td class="num">1</td></tr>
-      <tr><td>基準ページ</td><td>サービス／会社情報／採用情報／採用フォーム／お問い合わせ</td><td class="num">5</td></tr>
-      <tr><td>CMS</td><td>導入事例 一覧・詳細／メンバー 詳細／お知らせ 一覧・詳細</td><td class="num">5</td></tr>
-      <tr><td>シンプルページ</td><td>プライバシーポリシー／送信完了／404</td><td class="num">3</td></tr>
-      <tr class="total"><td>合計</td><td></td><td class="num">14</td></tr>
-    </tbody>
-  </table>
-
+  <section class="summary">
+    <h2 class="summary-title">ページ数の内訳</h2>
+    <div class="summary-card">
+      <table>
+        <thead>
+          <tr><th>ページ種別</th><th>該当ページ</th><th class="num">ページ数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="type">TOP</td><td class="pages">トップページ</td><td class="num">1</td></tr>
+          <tr><td class="type">基準ページ</td><td class="pages">サービス／会社情報／採用情報／採用フォーム／お問い合わせ</td><td class="num">5</td></tr>
+          <tr><td class="type">CMS</td><td class="pages">導入事例 一覧・詳細／メンバー 詳細／お知らせ 一覧・詳細</td><td class="num">5</td></tr>
+          <tr><td class="type">シンプルページ</td><td class="pages">プライバシーポリシー／送信完了／404</td><td class="num">3</td></tr>
+          <tr class="total"><td class="type">合計</td><td></td><td class="num">14</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
 </div>
 
 <script>
-  // Draw L-shaped (right-angle) connectors between parent and child nodes
+  // 親子ノードを角丸のL字コネクタで結ぶ
+  var RADIUS = 10;
+
   function drawConnectorsFor(svg, wrap) {
     while (svg.firstChild) svg.removeChild(svg.firstChild);
-    const wrapRect = wrap.getBoundingClientRect();
+    var wrapRect = wrap.getBoundingClientRect();
     svg.setAttribute('width', wrapRect.width);
     svg.setAttribute('height', wrapRect.height);
-    svg.setAttribute('viewBox', `0 0 ${wrapRect.width} ${wrapRect.height}`);
+    svg.setAttribute('viewBox', '0 0 ' + wrapRect.width + ' ' + wrapRect.height);
 
-    wrap.querySelectorAll('[data-parent]').forEach(child => {
-      const parentId = child.getAttribute('data-parent');
+    wrap.querySelectorAll('[data-parent]').forEach(function (child) {
+      var parentId = child.getAttribute('data-parent');
       if (!parentId) return;
-      const parent = document.getElementById(parentId);
+      var parent = document.getElementById(parentId);
       if (!parent) return;
-      const p = parent.getBoundingClientRect();
-      const c = child.getBoundingClientRect();
 
-      const x1 = p.right - wrapRect.left;
-      const y1 = p.top + p.height / 2 - wrapRect.top;
-      const x2 = c.left  - wrapRect.left;
-      const y2 = c.top + c.height / 2 - wrapRect.top;
-      const midX = x1 + (x2 - x1) / 2;
+      var p = parent.getBoundingClientRect();
+      var c = child.getBoundingClientRect();
 
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      path.setAttribute('d', `M ${x1} ${y1} H ${midX} V ${y2} H ${x2}`);
+      var x1 = p.right - wrapRect.left;
+      var y1 = p.top + p.height / 2 - wrapRect.top;
+      var x2 = c.left - wrapRect.left;
+      var y2 = c.top + c.height / 2 - wrapRect.top;
+      var midX = x1 + (x2 - x1) / 2;
+
+      var d;
+      if (Math.abs(y2 - y1) < 1) {
+        d = 'M ' + x1 + ' ' + y1 + ' H ' + x2;
+      } else {
+        var dir = y2 > y1 ? 1 : -1;
+        var r = Math.min(RADIUS, Math.abs(y2 - y1) / 2, Math.abs(midX - x1));
+        d = 'M ' + x1 + ' ' + y1 +
+            ' H ' + (midX - r) +
+            ' Q ' + midX + ' ' + y1 + ' ' + midX + ' ' + (y1 + r * dir) +
+            ' V ' + (y2 - r * dir) +
+            ' Q ' + midX + ' ' + y2 + ' ' + (midX + r) + ' ' + y2 +
+            ' H ' + x2;
+      }
+
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
       svg.appendChild(path);
     });
   }
 
   function drawAll() {
-    document.querySelectorAll('.map-wrap').forEach(wrap => {
-      const svg = wrap.querySelector('.connectors');
+    document.querySelectorAll('.map-wrap').forEach(function (wrap) {
+      var svg = wrap.querySelector('.connectors');
       if (svg) drawConnectorsFor(svg, wrap);
     });
   }
 
   window.addEventListener('load', drawAll);
   window.addEventListener('resize', drawAll);
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(drawAll);
-  }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(drawAll); }
 </script>
 </body>
 </html>
