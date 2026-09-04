@@ -1,0 +1,294 @@
+<!--
+  Client : AZLEAD株式会社
+  File   : Sitemap / Directory Map
+  Scope  : 全14ページ（Main Navigation + Utility）
+  Version: 1.0
+  Updated: 2026-09-04
+  Author : Geet Inc.
+-->
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>サイトマップ｜AZLEAD株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --text:#0D0D0D;
+    --muted:#6B7280;
+    --subtle:#9CA3AF;
+    --line:#D1D5DB;
+    --line-soft:#E5E7EB;
+    --accent:#111111;
+    --tag-top-bg:#111111;      --tag-top-fg:#FFFFFF;
+    --tag-base-bg:#EFEFEF;     --tag-base-fg:#111111;
+    --tag-cms-bg:#E8F0FE;      --tag-cms-fg:#1A4B9C;
+    --tag-simple-bg:#F5F5F5;   --tag-simple-fg:#6B7280;
+    --font:"Noto Sans JP","Hiragino Sans","Yu Gothic UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font);
+    font-size:14px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:56px 24px 80px;}
+
+  /* ---------- header ---------- */
+  header{border-bottom:1px solid var(--text);padding-bottom:20px;margin-bottom:36px;}
+  .eyebrow{font-size:11px;letter-spacing:.14em;color:var(--muted);margin:0 0 8px;}
+  h1{font-size:26px;font-weight:700;letter-spacing:.02em;margin:0 0 12px;}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:12px;color:var(--muted);margin:0;}
+  .meta span strong{color:var(--text);font-weight:500;}
+
+  /* ---------- legend ---------- */
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 32px;}
+  .legend .tag{cursor:default;}
+  .tag{
+    display:inline-block;font-size:11px;line-height:1.6;font-weight:500;
+    padding:1px 8px;border-radius:3px;white-space:nowrap;vertical-align:1px;
+  }
+  .tag-top{background:var(--tag-top-bg);color:var(--tag-top-fg);}
+  .tag-base{background:var(--tag-base-bg);color:var(--tag-base-fg);}
+  .tag-cms{background:var(--tag-cms-bg);color:var(--tag-cms-fg);}
+  .tag-simple{background:var(--tag-simple-bg);color:var(--tag-simple-fg);}
+
+  h2{
+    font-size:12px;letter-spacing:.14em;color:var(--muted);font-weight:500;
+    margin:0 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line-soft);
+  }
+  section{margin-bottom:48px;}
+
+  /* ---------- tree ---------- */
+  .tree,.tree ul{list-style:none;margin:0;padding:0;}
+  .tree ul{margin-left:11px;padding-left:22px;position:relative;}
+  .tree ul::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;
+    border-left:1px solid var(--line);
+  }
+  .tree ul>li{position:relative;padding-left:20px;}
+  .tree ul>li::before{
+    content:"";position:absolute;left:0;top:16px;width:20px;
+    border-top:1px solid var(--line);
+  }
+  .tree ul>li:last-child::after{
+    content:"";position:absolute;left:-1px;top:17px;bottom:0;width:2px;
+    background:var(--bg);
+  }
+  .node{padding:5px 0;}
+  .node-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;}
+  .name{font-size:15px;font-weight:500;}
+  .root .name{font-size:17px;font-weight:700;}
+  .group .name{color:var(--muted);font-weight:500;}
+  .desc{
+    font-size:12px;color:var(--muted);margin:2px 0 0;line-height:1.7;
+  }
+  .flow{
+    font-size:11px;color:var(--subtle);font-family:var(--font);
+  }
+
+  /* ---------- summary ---------- */
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line-soft);}
+  th{font-size:11px;letter-spacing:.1em;color:var(--muted);font-weight:500;}
+  td.num,th.num{text-align:right;width:70px;white-space:nowrap;}
+  tr.total td{border-top:1px solid var(--text);border-bottom:none;font-weight:700;}
+  td .pages{display:block;font-size:11px;color:var(--muted);margin-top:2px;line-height:1.7;}
+
+  .notes{margin:0;padding-left:1.2em;font-size:12px;color:var(--muted);}
+  .notes li{margin-bottom:6px;}
+
+  footer{
+    margin-top:56px;padding-top:20px;border-top:1px solid var(--line-soft);
+    font-size:11px;color:var(--subtle);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  @media (max-width:600px){
+    .wrap{padding:36px 18px 60px;}
+    h1{font-size:21px;}
+    .tree ul{padding-left:16px;}
+    .tree ul>li{padding-left:14px;}
+    .tree ul>li::before{width:14px;}
+  }
+  @media print{
+    body{font-size:12px;}
+    .wrap{padding:0;max-width:none;}
+    section{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">SITEMAP</p>
+    <h1>AZLEAD株式会社　コーポレートサイト サイトマップ</h1>
+    <p class="meta">
+      <span>全<strong>14</strong>ページ</span>
+      <span>Version <strong>1.0</strong></span>
+      <span>更新日 <strong>2026年9月4日</strong></span>
+      <span>作成 <strong>株式会社Geet</strong></span>
+    </p>
+  </header>
+
+  <section>
+    <h2>ページ種別</h2>
+    <div class="legend">
+      <span class="tag tag-top">TOP</span>
+      <span class="tag tag-base">基準ページ</span>
+      <span class="tag tag-cms">CMS</span>
+      <span class="tag tag-simple">シンプルページ</span>
+    </div>
+
+    <ul class="tree">
+      <li class="node root">
+        <div class="node-head"><span class="name">TOP</span><span class="tag tag-top">TOP</span></div>
+        <p class="desc">サイト全体の入口。事業の提供価値、導入事例、会社の姿勢への導線を集約します。</p>
+
+        <ul>
+          <li>
+            <div class="node"><div class="node-head"><span class="name">サービス</span><span class="tag tag-base">基準ページ</span></div>
+            <p class="desc">提供領域と、支援の進め方（プロセス）を掲載します。</p></div>
+          </li>
+
+          <li>
+            <div class="node group"><div class="node-head"><span class="name">導入事例</span></div></div>
+            <ul>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">一覧</span><span class="tag tag-cms">CMS</span></div>
+                <p class="desc">業界／支援領域で絞り込みができる一覧です。</p></div>
+              </li>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">詳細</span><span class="tag tag-cms">CMS</span></div>
+                <p class="desc">1本あたりの構成は <span class="flow">課題 → 体制 → 施策 → 成果 → 示唆</span> の流れで統一します。</p></div>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <div class="node"><div class="node-head"><span class="name">会社情報</span><span class="tag tag-base">基準ページ</span></div>
+            <p class="desc">代表メッセージ、メンバー一覧、会社概要、沿革、体制を1ページに集約します。</p></div>
+            <ul>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">メンバー詳細</span><span class="tag tag-cms">CMS</span></div>
+                <p class="desc">経歴と専門領域を掲載し、その領域の導入事例一覧へ接続します。</p></div>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <div class="node"><div class="node-head"><span class="name">採用情報</span><span class="tag tag-base">基準ページ</span></div>
+            <p class="desc">募集職種、働き方、選考フローを掲載します。</p></div>
+            <ul>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">採用フォーム</span><span class="tag tag-base">基準ページ</span></div>
+                <p class="desc">応募者向けの入力フォーム。お問い合わせとは項目・導線を分けて設計します。</p></div>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <div class="node group"><div class="node-head"><span class="name">お知らせ</span></div></div>
+            <ul>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">一覧</span><span class="tag tag-cms">CMS</span></div>
+                <p class="desc">最新のお知らせを時系列で掲載します。</p></div>
+              </li>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">詳細</span><span class="tag tag-cms">CMS</span></div>
+                <p class="desc">記事本文のテンプレートです。</p></div>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <div class="node"><div class="node-head"><span class="name">お問い合わせ</span><span class="tag tag-base">基準ページ</span></div>
+            <p class="desc">相談・見積もり依頼を受け付けるフォームです。</p></div>
+          </li>
+
+          <li>
+            <div class="node group"><div class="node-head"><span class="name">付帯ページ</span></div></div>
+            <ul>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">プライバシーポリシー</span><span class="tag tag-simple">シンプルページ</span></div>
+                <p class="desc">原稿は法務チェックを経たものをご支給いただきます。</p></div>
+              </li>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">送信完了</span><span class="tag tag-simple">シンプルページ</span></div>
+                <p class="desc">お問い合わせ・採用フォーム共用の1ページです。</p></div>
+              </li>
+              <li>
+                <div class="node"><div class="node-head"><span class="name">404</span><span class="tag tag-simple">シンプルページ</span></div>
+                <p class="desc">該当ページが見つからない場合の受け皿です。</p></div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ページ数の内訳</h2>
+    <table>
+      <thead>
+        <tr><th>ページ種別</th><th>該当ページ</th><th class="num">ページ数</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-top">TOP</span></td>
+          <td>TOP</td>
+          <td class="num">1</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-base">基準ページ</span></td>
+          <td>サービス／会社情報／採用情報／採用フォーム／お問い合わせ</td>
+          <td class="num">5</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-cms">CMS</span></td>
+          <td>導入事例 一覧・詳細／メンバー詳細／お知らせ 一覧・詳細</td>
+          <td class="num">5</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-simple">シンプルページ</span></td>
+          <td>プライバシーポリシー／送信完了／404</td>
+          <td class="num">3</td>
+        </tr>
+        <tr class="total">
+          <td>合計</td>
+          <td></td>
+          <td class="num">14</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>補足</h2>
+    <ul class="notes">
+      <li>CMSページは各1テンプレートの設計です。実際の記事・メンバーの掲載件数に応じてページは自動的に増えます。</li>
+      <li>送信完了ページは、お問い合わせと採用フォームで共用する想定です。フォームごとに出し分ける場合は1ページ追加となります。</li>
+      <li>お知らせの一覧・詳細は、導入事例とは別デザインを起こす前提でカウントしています。導入事例のレイアウトを流用する構成にも変更できます。</li>
+      <li>メンバー詳細から、その方の専門領域に紐づく導入事例へ回遊できる導線を設けます。</li>
+      <li>本サイトマップは第1版です。ご要望をふまえて随時更新いたします。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>AZLEAD株式会社　コーポレートサイト サイトマップ v1.0</span>
+    <span>株式会社Geet</span>
+  </footer>
+
+</div>
+</body>
+</html>
